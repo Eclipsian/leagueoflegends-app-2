@@ -2,7 +2,7 @@ import React, { useEffect, useState, Fragment } from 'react';
 import '../App.css';
 import axios from 'axios';
 import { Champion, ChampionTag } from '../interfaces';
-import { Listbox, Transition } from '@headlessui/react'
+import { Listbox } from '@headlessui/react'
 import { CheckIcon, SelectorIcon } from '@heroicons/react/solid'
 
 type Props = {};
@@ -58,13 +58,10 @@ const HomePage = (props: Props) => {
       <Listbox.Button className="relative w-full py-2 pl-3 pr-10 text-left bg-white rounded-lg shadow-md sm:text-sm">
         <span className="block truncate">{selected.name}</span>
         <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-          <SelectorIcon
-            className="w-5 h-5 text-gray-400"
-            aria-hidden="true"
-          />
+          <SelectorIcon className="w-5 h-5 text-gray-400"/>
         </span>
       </Listbox.Button>
-      <Listbox.Options className="absolute w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 focus:outline-none sm:text-sm">
+      <Listbox.Options className="absolute w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 sm:text-sm">
         {classTag.map((classTag, classTagIdx) => (
           <Listbox.Option
             key={classTagIdx}

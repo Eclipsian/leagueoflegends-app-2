@@ -5,7 +5,7 @@ import { Champion, ChampionTag } from '../interfaces';
 import Dropdown from '../components/Dropdown';
 import { SearchIcon } from '@heroicons/react/solid';
 import { useNavigate } from 'react-router-dom';
-import { championProfilePicture } from '../constants';
+import { championPfp, championData } from '../constants';
 
 type Props = {};
 
@@ -20,7 +20,7 @@ const HomePage = (props: Props) => {
   useEffect(() => {
     axios
       .get(
-        'http://ddragon.leagueoflegends.com/cdn/12.14.1/data/en_US/champion.json',
+        championData,
       )
       .then((res) => {
         setChampions(Object.values(res.data.data));
@@ -83,7 +83,7 @@ const HomePage = (props: Props) => {
                 onClick={() => navigate(`/champion/${champion.name}`)}
               >
                 <img
-                  src={ championProfilePicture + champion.image.full}
+                  src={ championPfp + champion.image.full }
                   // src={`http://ddragon.leagueoflegends.com/cdn/12.14.1/img/champion/${champion.image.full}`}
                   alt={champion.name}
                   className='w-full rounded-md'

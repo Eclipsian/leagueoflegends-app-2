@@ -3,7 +3,8 @@ import '../App.css';
 import axios from 'axios';
 import { Champion, ChampionTag } from '../interfaces';
 import Dropdown from '../components/Dropdown';
-import { MailIcon, SearchIcon } from '@heroicons/react/solid';
+import { SearchIcon } from '@heroicons/react/solid';
+import { useNavigate } from 'react-router-dom';
 
 type Props = {};
 
@@ -28,6 +29,8 @@ const HomePage = (props: Props) => {
         console.log(err);
       });
   }, []);
+
+  const navigate = useNavigate()
 
   return (
     <div className='px-4'>
@@ -75,7 +78,8 @@ const HomePage = (props: Props) => {
             return (
               <div
                 key={champion.id}
-                className='p-2 space-y-1 text-center rounded-lg shadow-md cursor-pointer shadow-gray-200 hover:shadow-lg hover:bg-slate-200'
+                className='p-2 space-y-1 text-center rounded-lg shadow-md cursor-pointer shadow-gray-200 hover:shadow-lg hover:bg-slate-200 hover:cursor-pointer'
+                onClick={() => navigate(`/champion/${champion.name}`)}
               >
                 <img
                   src={`http://ddragon.leagueoflegends.com/cdn/12.14.1/img/champion/${champion.image.full}`}

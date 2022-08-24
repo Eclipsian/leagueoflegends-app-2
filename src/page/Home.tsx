@@ -5,6 +5,7 @@ import { Champion, ChampionTag } from '../interfaces';
 import Dropdown from '../components/Dropdown';
 import { SearchIcon } from '@heroicons/react/solid';
 import { useNavigate } from 'react-router-dom';
+import { championProfilePicture } from '../constants';
 
 type Props = {};
 
@@ -82,7 +83,8 @@ const HomePage = (props: Props) => {
                 onClick={() => navigate(`/champion/${champion.name}`)}
               >
                 <img
-                  src={`http://ddragon.leagueoflegends.com/cdn/12.14.1/img/champion/${champion.image.full}`}
+                  src={ championProfilePicture + champion.image.full}
+                  // src={`http://ddragon.leagueoflegends.com/cdn/12.14.1/img/champion/${champion.image.full}`}
                   alt={champion.name}
                   className='w-full rounded-md'
                 />

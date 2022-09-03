@@ -9,3 +9,6 @@ export const championDetails =
 
 export const championSkins = 
 `http://ddragon.leagueoflegends.com/cdn/img/champion/splash/`;
+
+export const spellsImage = 
+`http://ddragon.leagueoflegends.com/cdn/12.16.1/img/`;

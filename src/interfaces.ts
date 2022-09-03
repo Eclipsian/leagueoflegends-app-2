@@ -1,11 +1,7 @@
 export interface Champion {
   blurb: string;
   id: string;
-  image: {
-    full: string;
-    sprite: string;
-    group: string;
-  };
+  image: Image;
   info: {
     attack: number;
     defense: number;
@@ -40,8 +36,13 @@ export interface Champion {
   tags: ChampionTag[];
   title: string;
   skins: {id: string; num: number; name: string; chromas: boolean }[];
+  enemytips: string[];
+  allytips: string[];
+  lore: string;
+  passive: Spell;
+  spells: Spell[];
 }
-  
+
 export enum ChampionTag {
   Assassin = 'Assassin',
   Fighter = 'Fighter',
@@ -50,4 +51,21 @@ export enum ChampionTag {
   Support = 'Support',
   Tank = 'Tank',
   All = 'All',
+}
+
+export interface Spell {
+  cooldown: number[];
+  cooldownBurn: string;
+  cost: number[];
+  costBurn: string;
+  costType: string;
+  description: string;
+  image: Image;
+  name: string;
+}
+
+export interface Image {
+  full: string;
+  sprite: string;
+  group: string;
 }

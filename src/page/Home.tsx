@@ -34,7 +34,7 @@ const HomePage = (props: Props) => {
   const navigate = useNavigate()
 
   return (
-    <div className='px-4'>
+    <div className='w-full max-w-5xl px-4 mx-auto'>
 
       <form className='grid grid-cols-2 gap-5 p-5 md:grid-cols-3 lg:grid-cols-4'>
         <div>
@@ -64,7 +64,7 @@ const HomePage = (props: Props) => {
         
       </form>
 
-      <div className='grid grid-cols-3 gap-4 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8'>
+      <div className='grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'>
         {champions
           .filter((champion) =>
             champion.name.toLowerCase().includes(searchValue.toLowerCase()),

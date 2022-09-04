@@ -16,7 +16,6 @@ const HomePage = (props: Props) => {
     ChampionTag.All,
   );
 
-  
   useEffect(() => {
     axios
       .get(
